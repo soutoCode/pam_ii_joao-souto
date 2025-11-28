@@ -1,0 +1,106 @@
+@accessToken=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImlhdCI6MTc2NDE4NTM4NiwiZXhwIjoxNzY0MTk2MTg2fQ.fchxJqbqZOlDetsiHp9rmBC9AHht-4hItv0dhRjUSuM
+
+### Login
+POST http://localhost:5000/auth/login
+Content-Type: application/json
+
+{
+  "email":"elizabeth.tudor@gmail.com",
+  "password":"ElizabethTudor123!"
+}
+
+### Get Me
+GET http://localhost:5000/auth/me
+Authorization: Bearer {{accessToken}}
+
+### Toggling theme
+PATCH http://localhost:5000/auth/me/theme
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+  "is_dark_mode_preferred":false
+}
+
+### Get all categories from authenticated user
+GET http://localhost:5000/auth/me/categories
+Authorization: Bearer {{accessToken}}
+
+### Create category for authenticated user
+POST http://localhost:5000/auth/me/categories
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+  "name":"CS",
+  "color":"#FFD7DD",
+  "icon":"computer",
+  "type":"periodic",
+  "repeat_interval_days":7,
+  "automatic_mode":true
+}
+
+### Get category by id
+GET http://localhost:5000/auth/me/categories/11
+Authorization: Bearer {{accessToken}}
+
+### Patch category by id
+PATCH http://localhost:5000/auth/me/categories/11
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+  "name":"THE GYM"
+}
+
+### Delete category by id
+DELETE http://localhost:5000/auth/me/categories/10
+Authorization: Bearer {{accessToken}}
+
+### Get all todos from a specific category
+GET http://localhost:5000/auth/me/categories/6/todos
+Authorization: Bearer {{accessToken}}
+
+### Create todo for specific category
+POST http://localhost:5000/auth/me/categories/17/todos
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+  "title":"Study compilers",
+  "is_done":false,
+  "due_date":null
+}
+
+### Get all todos
+GET http://localhost:5000/auth/me/todos
+Authorization: Bearer {{accessToken}}
+
+### Get todo by id
+GET http://localhost:5000/auth/me/todos/18
+Authorization: Bearer {{accessToken}}
+
+### Delete todo by id
+DELETE http://localhost:5000/auth/me/todos/17
+Authorization: Bearer {{accessToken}}
+
+### Delete todo by id
+PATCH http://localhost:5000/auth/me/todos/18
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+  "title":"AWESOME"
+}
+
+#### Delete todos by id
+DELETE http://localhost:5000/auth/me/todos
+Content-Type: application/json
+Authorization: Bearer {{accessToken}}
+
+{
+  "todosId":[5,6]
+}
+
+###
+GET http://192.168.1.108:5000/users

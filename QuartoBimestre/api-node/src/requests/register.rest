@@ -1,0 +1,18 @@
+### Register Step 1
+POST http://localhost:5000/register/step-1 HTTP/1.1
+content-type: application/json
+
+{
+  "email":"bitch@etec.sp.gov.br",
+  "password":"Bitch123!",
+  "confirmPassword":"Bitch123!"
+}
+
+### Register Step 2
+POST http://localhost:5000/register/step-2 HTTP/1.1
+content-type: application/json
+registration-token: 3cf3a310-6693-4fad-8fef-e8fa83b9dece
+
+{
+  "name":"Bitch"
+}

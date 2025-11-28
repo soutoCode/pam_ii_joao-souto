@@ -1,0 +1,9 @@
+{
+  "development":{
+    "database":"ristretto",
+    "username":"admin",
+    "password":"StrongPassword123!",
+    "host":"localhost",
+    "dialect":"mysql"
+  }
+}

@@ -1,0 +1,8 @@
+### Get all categories
+GET http://localhost:5000/categories
+
+### Get category by id
+GET http://localhost:5000/categories/3
+
+### Delete category by id
+DELETE http://localhost:5000/categories/4
